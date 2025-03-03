@@ -1,3 +1,179 @@
+// * Control Statement or Condition Statement
+
+
+// *  1. If statement
+/*
+syntax :
+    if (condition) {
+        statement;
+    }
+*/
+
+// *  2. If-else statement
+
+/*
+syntax :
+    if (condition) {
+        statement;
+    } else {
+        statement;
+    }
+    
+*/
+
+// *  3. If-else if-else statement
+
+/*
+syntax :
+    if (condition1) {
+        statement1;
+    } else if (condition2) {
+        statement2;
+    } else if (condition3) {
+        statement3;
+    } else {
+        statement4;
+    }
+
+*/
+
+// *  4. Switch Case statement
+
+/*
+syntax :
+    switch (expression) {
+        case constant1:
+            statement1;
+            break;
+            
+        case constant2:
+            statement2;
+            break;
+        
+        case constant3:
+            statement3;
+            break;
+        
+        default:
+            statement4;
+            break;
+    }
+
+*/
+
+// *  5. Ternary operator
+
+/*
+syntax :
+    (condition)? statement1 : statement2;
+
+*/
+
+// * Example Conditions :
+
+// * 1. IF Statement -
+
+/*
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    if (a == 10) {
+        printf("a is equal to 10\n");
+    }
+    return 0;
+}
+
+*/
+
+
+// * 2. If-else Statement -
+
+/*
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    if (a == 10) {
+        printf("a is equal to 10\n");
+    } else {
+        printf("a is not equal to 10\n");
+    }
+        
+    return 0;
+
+}
+
+*/
+
+
+// * 3. If-else if-else Statement -
+
+/*
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    if (a == 10) {
+        printf("a is equal to 10\n");
+    } else if (a == 20) {
+        printf("a is equal to 20\n");
+    } else {
+        printf("a is not equal to 10 or 20\n");
+    }
+        
+    return 0;
+
+}
+
+*/
+
+// *  4. Switch Case Statement
+
+/*
+#include <stdio.h>
+
+int main() {
+    int op;
+
+    printf("Enter an operator [1-3]: ");
+    scanf("%d", &op);
+    
+    switch (op) {
+    case 1:
+        printf("You are Select Option 1.");
+        break;
+    case 2:
+        printf("You are Select Option 2.");
+        break;
+    case 3:
+        printf("You are Select Option 3.");
+        default:
+    default :
+        printf("You have made an invalid selection.");
+    }
+        
+    return 0;
+}
+    
+*/
+
+// * 5. Ternary operator
+
+/*
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int result = (a == 10)? printf("a is equal to 10\n") : printf("a is not equal to 10\n");
+    return 0;
+}
+
+*/
+
+// Exercise condition 
+
+
 #include<stdio.h>
 int main(){
     system("cls");
@@ -111,3 +287,4 @@ int main(){
     
     return 0;
 }
+
