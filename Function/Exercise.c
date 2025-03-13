@@ -161,16 +161,17 @@ price
 #include<stdio.h>
 int code[20],qty[20],n;
 char name[20][20];
-float price[20];
+float price[20],total;
 void InputProduct(){
     printf("=====================[Input Product]====================================\n");
     printf("Enter product for store in stock : ");scanf(" %d",&n);
     for (int i =0;i<n;i++){
-        printf("=================[Product %d ]====================================\n",i);
+        printf("=======================[Product %d ]====================================\n",i);
         printf("Enter product code : ");scanf("%d",&code[i]);
         printf("Enter product name : ");scanf("%s",&name[i]);
         printf("Enter product price : ");scanf("%f",&price[i]);
         printf("Enter product quantity : ");scanf("%d",&qty[i]);
+        printf("\n");
     }
     printf("=========================[Input Product Complete]========================\n");
 }
@@ -179,11 +180,26 @@ void DisplayProduct(){
     printf("=========================[Display Product]========================\n");
     printf("Code\tName\tPrice\tQuantity\n");
     for(int i=0;i<n;i++){
-        printf("%d\t%s\t%.2f\t%d",code[i],name[i],price[i],qty[i]);
+        printf("%d\t%s\t%.2f\t%d\n",code[i],name[i],price[i],qty[i]);
     }
     printf("====================[Display Product Complete]====================\n");
 }
 
+float TotalPrice(){
+    total = 0;// ?
+    for (int i=0;i<n;i++){
+        total += price[i] * qty[i];
+    }
+    return total;
+}
+
+float PaymentInRiel(){
+    total = TotalPrice();
+    float riel = 4000.00;
+    printf("====================[Payment In Riel]====================\n");
+    printf("Payment In Riel: %.2f\n",total * riel);
+    printf("================[Payment In Riel Complete]===============\n");
+}
 
 int main(){
     system("clear");
@@ -208,6 +224,10 @@ int main(){
             }
             case 3 :{
                 DisplayProduct();
+                break;
+            }
+            case 4 :{
+                PaymentInRiel();
                 break;
             }
         }
