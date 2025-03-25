@@ -307,3 +307,28 @@ int main(){
 	
 	return 0;
 }
+
+
+// * Create a program to store information employee
+    // - Employee Name
+    // - Employee ID
+    // - Employee Department
+    // - Employee Salary
+    // - Employee Position
+    // - Employee Birthday
+    // - Employee Address??
+    // - Employee Phone Number
+    // - Employee Email
+    // - Employee Status (Active, Inactive)
+    // - Employee Level (Manager, Supervisor, Employee)
+    // - Employee Marital Status (Single, Married, Divorced, Widowed)
+
+    // - Menu:
+    // 1. create employee
+    // 2. Display all employee
+    // 3. Search employee by name, id, salary, position, etc.
+    // 4. Update employee information
+    // 5. Delete employee
+    // 6. Sort employee by name, id, salary, position, etc.
+    // 7. Insert employee 
+    // 0. Exit
