@@ -30,14 +30,32 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+
+#define BLUE      "\033[34m"   // Color BLUE
+#define GREEN     "\033[32m"   // Color GREEN
+#define RED       "\033[31m"   // Color RED
+#define CYAN      "\033[36m"
+#define PURPLE    "\033[35m"
+#define YELLOW    "\033[33m"   // Color YELLOW
+#define RESET     "\033[0m"    // Color RESET
+
 const int ROWS = 5; // const can't change value
 const int COLUMS = 5;
 int i,j;
 
+// Pass By Array
 void ViewSeat(char seat[ROWS][COLUMS]){
+	printf("===========================================================\n");
 	for(i=0;i<ROWS;i++){
+		printf("\t\t\t");
 		for(j=0;j<COLUMS;j++){
-			printf("%c ",seat[i][j]);
+			if(seat[i][j]=='0'){
+				printf(GREEN"%c ",seat[i][j]);
+				printf(RESET);
+			}else{
+				printf(RED"%c ",seat[i][j]);
+				printf(RESET);
+			}
 		}
 		printf("\n");
 	}
@@ -45,18 +63,23 @@ void ViewSeat(char seat[ROWS][COLUMS]){
 
 void BookedSeat(char seat[ROWS][COLUMS]){
 	int col,row;
-	printf("Enter row [0-4] : ");scanf("%d",&row);
-	printf("Enter column [0-4] : ");scanf("%d",&col);
+	printf("===========================================================\n");
+	printf("=> Enter row [0-4] : ");scanf("%d",&row);
+	printf("=> Enter column [0-4] : ");scanf("%d",&col);
+	printf("===========================================================\n");
 	
 	if(row>=0 && row<ROWS && col>=0 && col<COLUMS){
 		if(seat[row][col]=='0'){
 			seat[row][col]='X';
-			printf("\nSuccess !!\n");
+			printf(GREEN"                     [ Success  ]             \n");
+			printf(RESET);
 		}else{
-			printf("\nSeat is Booked !!\n");
+			printf(YELLOW"                   Seat is Booked             \n");
+			printf(RESET);
 		}
 	}else{
-		printf("\n Invalid Seat\n");
+		printf(RED"      Invalid Seat          \n");
+		printf(RESET);
 	}
 	
 	
@@ -74,19 +97,31 @@ int main(){
 		}
 	}
 	do{
-				
-		
-		printf("** Movie System **\n");
-		printf("1. Views Seat \n");
-		printf("2. Booked Seat\n");
+		system("cls");	
+		printf(PURPLE"===========================================================\n");
+		printf("                         Movie System                      \n");
+		printf("===========================================================\n");
+		printf("[ 1. Views Seat \n");
+		printf("[ 2. Booked Seat\n");
+		printf("[ 0. Exit Program\n");
+		printf("===========================================================\n");
 		printf("Choose an option : ");scanf("%d",&op);
+		printf(RESET);
 		switch(op){
 			case 1 :{
 				ViewSeat(seat);
+				system("pause");
 				break;
 			}
 			case 2 :{
 				BookedSeat(seat);
+				system("pause");
+				break;
+			}
+			case 0 : {
+				printf(CYAN"===========================================================\n");
+				printf("                         Exit Program                      \n");
+				printf("===========================================================\n");
 				break;
 			}
 		}
