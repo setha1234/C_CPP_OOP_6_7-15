@@ -309,8 +309,10 @@ int main(){
 }
 
 
-// * Create a program to store information employee
+    // * Create a program to store information employee
+
     // - Employee Name
+    
     // - Employee ID
     // - Employee Department
     // - Employee Salary

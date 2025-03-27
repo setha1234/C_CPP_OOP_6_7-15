@@ -31,13 +31,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define BLUE      "\033[34m"   // Color BLUE
-#define GREEN     "\033[32m"   // Color GREEN
-#define RED       "\033[31m"   // Color RED
-#define CYAN      "\033[36m"
-#define PURPLE    "\033[35m"
-#define YELLOW    "\033[33m"   // Color YELLOW
-#define RESET     "\033[0m"    // Color RESET
+#define bisque     "\033[48;2;255;228;196m" //  rgb = RED GREEN BLUE
+#define DEEPPINK   "\033[5;3;38;2;255;20;147m"
+#define BLUE       "\033[34m"   // Color BLUE
+#define SUCCESS    "\033[38;2;124;252;0m"   // Color GREEN
+#define RED        "\033[31m"   // Color RED
+#define CYAN       "\033[36m"
+#define PURPLE     "\033[35m"
+#define YELLOW     "\033[33m"   // Color YELLOW
+#define RESET      "\033[0m"    // Color RESET
 
 const int ROWS = 5; // const can't change value
 const int COLUMS = 5;
@@ -50,7 +52,7 @@ void ViewSeat(char seat[ROWS][COLUMS]){
 		printf("\t\t\t");
 		for(j=0;j<COLUMS;j++){
 			if(seat[i][j]=='0'){
-				printf(GREEN"%c ",seat[i][j]);
+				printf(SUCCESS"%c ",seat[i][j]);
 				printf(RESET);
 			}else{
 				printf(RED"%c ",seat[i][j]);
@@ -71,7 +73,7 @@ void BookedSeat(char seat[ROWS][COLUMS]){
 	if(row>=0 && row<ROWS && col>=0 && col<COLUMS){
 		if(seat[row][col]=='0'){
 			seat[row][col]='X';
-			printf(GREEN"                     [ Success  ]             \n");
+			printf(SUCCESS"                     [ Success  ]             \n");
 			printf(RESET);
 		}else{
 			printf(YELLOW"                   Seat is Booked             \n");
@@ -98,12 +100,12 @@ int main(){
 	}
 	do{
 		system("cls");	
-		printf(PURPLE"===========================================================\n");
+		printf(DEEPPINK"===========================================================\n");
 		printf("                         Movie System                      \n");
 		printf("===========================================================\n");
-		printf("[ 1. Views Seat \n");
-		printf("[ 2. Booked Seat\n");
-		printf("[ 0. Exit Program\n");
+		printf("[ 1. Views Seat                                            \n");
+		printf("[ 2. Booked Seat                                           \n");
+		printf("[ 0. Exit Program                                          \n");
 		printf("===========================================================\n");
 		printf("Choose an option : ");scanf("%d",&op);
 		printf(RESET);
