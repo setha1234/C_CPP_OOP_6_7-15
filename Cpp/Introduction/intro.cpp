@@ -36,7 +36,6 @@ int main(){
     // char gender;
     // char name[50];
     // string address;
-
     // Input Detail
     // cout<<"===========[Input]==========="<<endl;
     // cout<<"Enter Age    : ";cin>>age;
@@ -55,25 +54,19 @@ int main(){
     // cout<<"Weight : "<<weight<<endl;
     // cout<<"Tel    : "<<tel<<endl;
     // cout<<"Address: "<<address<<endl;
-
-
     // Data Charator
     int id;
     char name[20];
     string address;
-
-
     cout<<"Enter your id   : ";cin>>id;
     cout<<"Enter your name : ";cin.ignore();
     cin.getline(name,50); 
     cout<<"Enter your address :";
     getline(cin,address);
 
-    
     cout<<"Name :"<<name<<endl;
     cout<<"Address :"<<address<<endl;
     
-
     return  0;
 }
 
