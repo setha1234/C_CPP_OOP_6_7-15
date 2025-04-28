@@ -152,14 +152,147 @@ void Delete_Book(Book &d){
 }
 
 void Search_Book(Book &s){
+    // search by title or id
+    int answer;
+    string s_name;
+    int s_id;
+    cout<<"What you want to search?"<<endl;
+    cout<<"1 . By Name."<<endl;
+    cout<<"2 . By Id."<<endl;
+    cout<<"Please input the answer : ";cin>>answer;
+    if(answer == 1){
+        cout<<"Enter name for search : ";cin>>s_name;
+        for(int i=0;i<s.size_book;i++){
+            if(s.title[i] == s_name){
+                cout<<"I found it."<<endl;
+                cout<<"Book : "<<i+1<<endl;
+                cout<<"ID : "<<s.id[i]<<endl;
+                cout<<"Title : "<<s.title[i]<<endl;
+                cout<<"Author : "<<s.author[i]<<endl;
+                cout<<"Genre : "<<s.genre[i]<<endl;
+                cout<<"PubliccationYear : "<<s.publiccationYear[i]<<endl;
+                cout<<"Language : "<<s.language[i]<<endl;
+                cout<<"Pagecount : "<<s.pagecount[i]<<endl;
+                cout<<"Rate : "<<s.rate[i]<<endl;
+                cout<<"Price : "<<s.price[i]<<endl;
+            }else{
+                cout<<"I can't find it.Sorry Please try again."<<endl;
+                
+            }
+        }
+    }else if(answer == 2){
+        cout<<"Enter id for search : ";cin>>s_id;
+        for(int i=0;i<s.size_book;i++){
+            if(s.id[i] == s_id){
+                cout<<"I found it."<<endl;
+                cout<<"Book : "<<i+1<<endl;
+                cout<<"ID : "<<s.id[i]<<endl;
+                cout<<"Title : "<<s.title[i]<<endl;
+                cout<<"Author : "<<s.author[i]<<endl;
+                cout<<"Genre : "<<s.genre[i]<<endl;
+                cout<<"PubliccationYear : "<<s.publiccationYear[i]<<endl;
+                cout<<"Language : "<<s.language[i]<<endl;
+                cout<<"Pagecount : "<<s.pagecount[i]<<endl;
+                cout<<"Rate : "<<s.rate[i]<<endl;
+                cout<<"Price : "<<s.price[i]<<endl;
+            }else{
+                cout<<"I can't find it.Sorry Please try again."<<endl;
+                
+            }
+        }
+    }else{
+        cout<<"Invalid Answer!"<<endl;
+    }
+    cout<<"=========================================="<<endl;
+
 
 }
 
 void Add_Book(Book &a){
+    int new_size;
+    cout<<"==================Add Book==================="<<endl;
+    cout<<"Enter the size of Book to add : ";cin>>new_size;
+    for(int i=a.size_book;i< new_size+a.size_book ;i++){
+        cout<<"Book : "<<i+1<<endl;
+        cout<<"Enter id of book               : ";cin>>a.id[i];
+        cout<<"Enter title of book            : ";cin.ignore();getline(cin,a.title[i]);
+        cout<<"Enter author of book           : ";getline(cin,a.author[i]);
+        cout<<"Enter genre of book            : ";getline(cin,a.genre[i]);
+        cout<<"Enter publiccationYear of book : ";getline(cin,a.publiccationYear[i]);
+        cout<<"Enter language of book         : ";getline(cin,a.language[i]);
+        cout<<"Enter pagecount of book        : ";cin>>a.pagecount[i];
+        cout<<"Enter rate of book             : ";cin>>a.rate[i];
+        cout<<"Enter price of book            : ";cin>>a.price[i];
+        cout<<endl;
+    }
+    
+    a.size_book += new_size;
+    cout<<"Book added successfully."<<endl;
+    
+    cout<<"=========================================="<<endl;
 
 }
 
 void Sort_Book(Book &s){
+    // sort by title or id
+    int answer;
+    do{
+        cout<<"What you want to sort?"<<endl;
+        cout<<"1 . By Name."<<endl;
+        cout<<"2 . By Id."<<endl;
+        cout<<"0 . Exit."<<endl;
+        cout<<"Please input the answer : ";cin>>answer;
+        switch(answer){
+            case 1 : {
+                cout<<"Sort by title."<<endl;
+                for(int i=0;i<s.size_book;i++){
+                    for(int j=i+1;j<s.size_book;j++){
+                        if(s.title[i] > s.title[j]){
+                            swap(s.title[i],s.title[j]);
+                            swap(s.id[i],s.id[j]);
+                            swap(s.author[i],s.author[j]);
+                            swap(s.genre[i],s.genre[j]);
+                            swap(s.publiccationYear[i],s.publiccationYear[j]);
+                            swap(s.language[i],s.language[j]);
+                            swap(s.pagecount[i],s.pagecount[j]);
+                            swap(s.rate[i],s.rate[j]);
+                            swap(s.price[i],s.price[j]);
+                        }
+                    }
+                }
+                Display_Book(s);
+                break;
+            }
+            case 2 : {
+                cout<<"Sort by id."<<endl;
+                for(int i=0;i<s.size_book;i++){
+                    for(int j=i+1;j<s.size_book;j++){
+                        if(s.id[i] > s.id[j]){
+                            swap(s.title[i],s.title[j]);
+                            swap(s.id[i],s.id[j]);
+                            swap(s.author[i],s.author[j]);
+                            swap(s.genre[i],s.genre[j]);
+                            swap(s.publiccationYear[i],s.publiccationYear[j]);
+                            swap(s.language[i],s.language[j]);
+                            swap(s.pagecount[i],s.pagecount[j]);
+                            swap(s.rate[i],s.rate[j]);
+                            swap(s.price[i],s.price[j]);
+                        }
+                    }
+                }
+                Display_Book(s);
+                break;
+            }
+            case 0 : {
+                cout<<"Exit Sort Book."<<endl;
+                break;
+            }
+            default : {
+                cout<<"Invalid Answer!"<<endl;
+            }
+        }
+    }while(answer != 0);
+    
     
 }
 int main(){
@@ -197,15 +330,15 @@ int main(){
                 break;
             }
             case 5 : {
-
+                Search_Book(book);
                 break;
             }
             case 6 : {
-
+                Add_Book(book);
                 break;
             }
             case 7 : {
-
+                Sort_Book(book);
                 break;
             }
             case 0 : {
