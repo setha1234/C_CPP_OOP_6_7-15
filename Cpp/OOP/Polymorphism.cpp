@@ -51,81 +51,161 @@
 // }
 
 
+// #include<iostream>
+// using namespace std;
+// class Person{
+//     private : 
+//         string name;
+//         char gender;
+//         int id;
+//         float salary;
+//     public : 
+//         void Input(){
+//             cout<<"Enter name : ";cin>>name;
+//             cout<<"Enter id : ";cin>>id;
+//             cout<<"Enter gender : ";cin>>gender;
+//             cout<<"Enter salary : ";cin>>salary;
+//         }
+//         void Input(int i){
+//             cout<<"Enter name : ";cin>>name;
+//             id = i;
+//             cout<<"Enter gender : ";cin>>gender;
+//             cout<<"Enter salary : ";cin>>salary;
+//         }
+//         void Input(float s){
+//             cout<<"Enter name : ";cin>>name;
+//             cout<<"Enter id : ";cin>>id;
+//             cout<<"Enter gender : ";cin>>gender;
+//             salary = s;
+//         }
+//         void Input(string n){
+//             name = n;
+//             cout<<"Enter id : ";cin>>id;
+//             cout<<"Enter gender : ";cin>>gender;
+//             cout<<"Enter salary : ";cin>>salary;
+//         }
+//         void Input(char g){
+//             cout<<"Enter name : ";cin>>name;
+//             cout<<"Enter id : ";cin>>id;
+//             gender = g;
+//             cout<<"Enter salary : ";cin>>salary;
+//         }
+//         void Input(string n,int i,float s,char g){
+//             name = n;
+//             id = i;
+//             salary = s;
+//             gender = g;
+//         }
+//         void Display(){
+//             cout<<"Name : "<<name<<endl;
+//             cout<<"Gender : "<<gender<<endl;
+//             cout<<"Salary : "<<salary<<endl;
+//             cout<<"ID    : "<<id<<endl;
+//         }
+// };
+
+// int main(){
+//     Person s;
+//     cout<<"Result #1 "<<endl;
+//     s.Input();
+//     s.Display();
+//     cout<<"Result #2 "<<endl;
+//     s.Input(123);
+//     s.Display();
+//     cout<<"Result #3 "<<endl;
+//     s.Input("Koko");
+//     s.Display();
+//     cout<<"Result #4 "<<endl;
+//     s.Input(1000.4f);
+//     s.Display();
+//     cout<<"Result #5 "<<endl;
+//     s.Input('F');
+//     s.Display();
+//     cout<<"Result #1 "<<endl;
+//     s.Input("Setha Sith",1,100,'M');
+//     s.Display();
+// }
+
+// #include <iostream>
+// using namespace std;
+// class Person{
+//     public :
+//         void make_work(){
+//             cout<<"I am working"<<endl;
+//         }
+//         // overloading function
+//         void make_work(int i){
+//             cout<<"id : "<<endl;
+//         }
+// };
+// class Employee:public Person{
+//     public : 
+//         // override jenh pi base class
+//         void make_work(){
+//             cout<<"Employee working"<<endl;
+//         }      
+// };
+// int main(){
+//     Employee e;
+//     e.make_work();
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// template<typename T>
+
+// // temple with function
+// T sum(T a, T b){
+//     return a*b;
+// }
+// int main(){
+//     float a=10;
+//     float b = 20;
+//     cout<<"Sum = "<<sum(a,b)<<endl;
+//     int x=40,y=345;
+//     cout<<"Sum ="<<sum(x,y)<<endl;
+//     return 0;
+// }
+
+
+
+// template class
+
+
 #include<iostream>
 using namespace std;
+template<class F,class S>
 class Person{
-    private : 
-        string name;
-        char gender;
-        int id;
-        float salary;
+    // data members : variables
+    // method members : functions
+    private :
+        S name;
+        F id;
+        F salary;
     public : 
         void Input(){
             cout<<"Enter name : ";cin>>name;
             cout<<"Enter id : ";cin>>id;
-            cout<<"Enter gender : ";cin>>gender;
-            cout<<"Enter salary : ";cin>>salary;
+            cout<<"Enter salary  : ";cin>>salary;
         }
-        void Input(int i){
-            cout<<"Enter name : ";cin>>name;
-            id = i;
-            cout<<"Enter gender : ";cin>>gender;
-            cout<<"Enter salary : ";cin>>salary;
+        F getID(){
+            return id;
         }
-        void Input(float s){
-            cout<<"Enter name : ";cin>>name;
-            cout<<"Enter id : ";cin>>id;
-            cout<<"Enter gender : ";cin>>gender;
-            salary = s;
-        }
-        void Input(string n){
-            name = n;
-            cout<<"Enter id : ";cin>>id;
-            cout<<"Enter gender : ";cin>>gender;
-            cout<<"Enter salary : ";cin>>salary;
-        }
-        void Input(char g){
-            cout<<"Enter name : ";cin>>name;
-            cout<<"Enter id : ";cin>>id;
-            gender = g;
-            cout<<"Enter salary : ";cin>>salary;
-        }
-        void Input(string n,int i,float s,char g){
-            name = n;
-            id = i;
-            salary = s;
-            gender = g;
+        F getSalary(){
+            return salary;
         }
         void Display(){
             cout<<"Name : "<<name<<endl;
-            cout<<"Gender : "<<gender<<endl;
+            cout<<"ID  : "<<id<<endl;
             cout<<"Salary : "<<salary<<endl;
-            cout<<"ID    : "<<id<<endl;
         }
 };
 
 int main(){
-    Person s;
-    cout<<"Result #1 "<<endl;
-    s.Input();
-    s.Display();
-    cout<<"Result #2 "<<endl;
-    s.Input(123);
-    s.Display();
-    cout<<"Result #3 "<<endl;
-    s.Input("Koko");
-    s.Display();
-    cout<<"Result #4 "<<endl;
-    s.Input(1000.4f);
-    s.Display();
-    cout<<"Result #5 "<<endl;
-    s.Input('F');
-    s.Display();
-    cout<<"Result #1 "<<endl;
-    s.Input("Setha Sith",1,100,'M');
-    s.Display();
-
-
-
+    Person<float,string> obj;
+    obj.Input();
+    obj.Display();
 
 }
